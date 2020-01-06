@@ -16,7 +16,6 @@ class MqttZwaveDispatcher:
 
         # Setup backend
         self.backend = Backend_with_dimmers_and_sensors()
-        self.dimmer_value = 0
     
         self.client = mqtt.Client(client_id=self.true_device_id, protocol=mqtt.MQTTv311)
 
@@ -51,10 +50,29 @@ class MqttZwaveDispatcher:
 
     def on_message(self, mosq, obj, msg):
         print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
-        print(self.backend.set_dimmer_level(6, self.dimmer_value))
-        self.dimmer_value = self.dimmer_value + 10
-        if self.dimmer_value > 100:
-            self.dimmer_value = 0
+
+        dimmer_value = 0
+
+        parameters = msg.topic.split("&")[1:]
+
+        for p in parameters:
+            details = p.split("=")
+            name = details[0]
+            value = details[1]
+
+            print("name : "+name+", value : "+value)
+
+            if name == "topic":
+                if value == "light":
+                    dimmer_value = int(msg.payload)
+                    print("dimmer set to "+str(dimmer_value))
+                    if dimmer_value < 0:
+                        dimmer_value = 0
+                    elif dimmer_value > 100:
+                        dimmer_value = 100
+
+                    print(self.backend.set_dimmer_level(6, dimmer_value))
+
 
     def on_subscribe(self, mosq, obj, mid, granted_qos):
         print("Subscribed: " + str(mid) + " " + str(granted_qos))
