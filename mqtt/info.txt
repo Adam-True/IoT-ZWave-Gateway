@@ -1,0 +1,31 @@
+[Device] [Create] device info: {
+  "deviceId": "ZWave-Gateway",
+  "generationId": "637139236599948369",
+  "etag": "MzkxODQ0OTgw",
+  "connectionState": "Disconnected",
+  "status": "enabled",
+  "statusReason": null,
+  "connectionStateUpdatedTime": "0001-01-01T00:00:00",
+  "statusUpdatedTime": "0001-01-01T00:00:00",
+  "lastActivityTime": "0001-01-01T00:00:00",
+  "cloudToDeviceMessageCount": 0,
+  "capabilities": {
+    "iotEdge": false
+  },
+  "authentication": {
+    "symmetricKey": {
+      "primaryKey": "3CRS12rXfQJ15qEoMbnEabs3J80z0ewi2KyrD0ER6bc=",
+      "secondaryKey": "1KccUgqMjY6D3lm0acMPCYmrHqkUYFH2/Hz58z/xPh4="
+    },
+    "x509Thumbprint": {
+      "primaryThumbprint": null,
+      "secondaryThumbprint": null
+    },
+    "type": "sas",
+    "SymmetricKey": {
+      "primaryKey": "3CRS12rXfQJ15qEoMbnEabs3J80z0ewi2KyrD0ER6bc=",
+      "secondaryKey": "1KccUgqMjY6D3lm0acMPCYmrHqkUYFH2/Hz58z/xPh4="
+    }
+  },
+  "connectionString": "HostName=IoT-Hub-MSE.azure-devices.net;DeviceId=ZWave-Gateway;SharedAccessKey=3CRS12rXfQJ15qEoMbnEabs3J80z0ewi2KyrD0ER6bc="
+}

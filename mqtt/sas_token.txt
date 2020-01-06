@@ -1,0 +1,1 @@
+SharedAccessSignature sr=IoT-Hub-MSE.azure-devices.net%2Fdevices%2FZWave-Gateway&sig=mu%2Fhgeaol%2Bs6mLFdl8G06CBocUeeRqx06g77hzvQBFU%3D&se=1580847387

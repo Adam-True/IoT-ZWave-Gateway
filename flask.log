@@ -1,0 +1,609 @@
+2019-10-03 10:11:22,963 ERROR: Exception on /nodes/get_nodes_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 305, in nodes
+    return backend.get_nodes_list()
+  File "backend.py", line 207, in get_nodes_list
+    print(node.node_id + " " + node.location)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2019-10-03 10:11:23,000 ERROR: Exception on /nodes/get_nodes_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 305, in nodes
+    return backend.get_nodes_list()
+  File "backend.py", line 207, in get_nodes_list
+    print(node.node_id + " " + node.location)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2019-10-03 10:11:23,019 ERROR: Exception on /nodes/get_nodes_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 305, in nodes
+    return backend.get_nodes_list()
+  File "backend.py", line 207, in get_nodes_list
+    print(node.node_id + " " + node.location)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2019-10-03 10:32:10,943 ERROR: Exception on /nodes/get_nodes_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 305, in nodes
+    return backend.get_nodes_list()
+  File "backend.py", line 207, in get_nodes_list
+    print(node.node_id + " " + node.location)
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2019-10-03 10:39:42,603 ERROR: Exception on /nodes/get_nodes_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 305, in nodes
+    return backend.get_nodes_list()
+  File "backend.py", line 208, in get_nodes_list
+    return jsonify(l)
+  File "/usr/local/lib/python2.7/dist-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+2019-10-03 10:49:26,810 ERROR: Exception on /nodes/get_nodes_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 305, in nodes
+    return backend.get_nodes_list()
+  File "backend.py", line 207, in get_nodes_list
+    l[node.node_id] = node.name
+AttributeError: 'dict' object has no attribute 'node_id'
+2019-10-09 23:33:54,928 ERROR: Exception on /sensors/4/get_all_measures [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 641, in get_all_measures
+    return backend.get_all_Measures(node)
+  File "/home/pi/IoT-Z-Wave/backend.py", line 360, in get_all_Measures
+    battery=bat.label.lower(), humidity=hum.label.lower(),
+AttributeError: 'int' object has no attribute 'label'
+2019-10-10 00:08:41,441 ERROR: Exception on /sensors/4/get_all_measures [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 641, in get_all_measures
+    return backend.get_all_Measures(node)
+  File "/home/pi/IoT-Z-Wave/backend.py", line 360, in get_all_Measures
+    battery=bat.label.lower(), humidity=hum.label.lower(),
+AttributeError: 'int' object has no attribute 'label'
+2019-10-10 00:57:07,655 ERROR: Exception on /sensors/4/get_all_measures [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 641, in get_all_measures
+    return backend.get_all_Measures(node)
+  File "/home/pi/IoT-Z-Wave/backend.py", line 361, in get_all_Measures
+    battery=bat.label.lower(), humidity=hum.label.lower(),
+AttributeError: 'int' object has no attribute 'label'
+2019-10-10 01:19:42,865 ERROR: Exception on /dimmers/get_dimmers_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 849, in get_dimmers
+    return backend.get_dimmers()
+  File "/home/pi/IoT-Z-Wave/backend.py", line 386, in get_dimmers
+    print(node.device_type)
+AttributeError: 'ZWaveNode' object has no attribute 'device_type'
+2019-10-10 01:22:35,848 ERROR: Exception on /dimmers/get_dimmers_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 849, in get_dimmers
+    return backend.get_dimmers()
+  File "/home/pi/IoT-Z-Wave/backend.py", line 386, in get_dimmers
+    print(node.device_type)
+AttributeError: 'ZWaveNode' object has no attribute 'device_type'
+2019-10-10 01:25:42,307 ERROR: Exception on /dimmers/get_dimmers_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 849, in get_dimmers
+    return backend.get_dimmers()
+  File "/home/pi/IoT-Z-Wave/backend.py", line 387, in get_dimmers
+    print(node.device_type)
+AttributeError: 'ZWaveNode' object has no attribute 'device_type'
+2019-10-10 01:32:21,363 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 938, in set_dimmer_level
+    backend.set_dimmer_level(node,value)
+  File "/home/pi/IoT-Z-Wave/backend.py", line 406, in set_dimmer_level
+    node.set_config_param("Level", level)
+  File "/usr/local/lib/python2.7/dist-packages/pyozwweb-0.3.0b8-py2.7.egg/openzwave/node.py", line 910, in set_config_param
+    return self._network.manager.setConfigParam(self.home_id, self.object_id, param, value, size)
+  File "libopenzwave.pyx", line 3484, in libopenzwave.PyManager.setConfigParam (src-lib/libopenzwave/libopenzwave.cpp:23271)
+TypeError: an integer is required
+2019-10-10 01:34:36,376 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 938, in set_dimmer_level
+    backend.set_dimmer_level(node,value)
+  File "/home/pi/IoT-Z-Wave/backend.py", line 406, in set_dimmer_level
+    node.set_config_param("Level", level)
+  File "/usr/local/lib/python2.7/dist-packages/pyozwweb-0.3.0b8-py2.7.egg/openzwave/node.py", line 910, in set_config_param
+    return self._network.manager.setConfigParam(self.home_id, self.object_id, param, value, size)
+  File "libopenzwave.pyx", line 3484, in libopenzwave.PyManager.setConfigParam (src-lib/libopenzwave/libopenzwave.cpp:23271)
+TypeError: an integer is required
+2019-10-10 01:34:47,090 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 938, in set_dimmer_level
+    backend.set_dimmer_level(node,value)
+  File "/home/pi/IoT-Z-Wave/backend.py", line 406, in set_dimmer_level
+    node.set_config_param("Level", level)
+  File "/usr/local/lib/python2.7/dist-packages/pyozwweb-0.3.0b8-py2.7.egg/openzwave/node.py", line 910, in set_config_param
+    return self._network.manager.setConfigParam(self.home_id, self.object_id, param, value, size)
+  File "libopenzwave.pyx", line 3484, in libopenzwave.PyManager.setConfigParam (src-lib/libopenzwave/libopenzwave.cpp:23271)
+TypeError: an integer is required
+2019-10-10 01:38:47,137 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 938, in set_dimmer_level
+    backend.set_dimmer_level(node,value)
+  File "/home/pi/IoT-Z-Wave/backend.py", line 406, in set_dimmer_level
+    node.set_config_param("Level", level)
+  File "/usr/local/lib/python2.7/dist-packages/pyozwweb-0.3.0b8-py2.7.egg/openzwave/node.py", line 910, in set_config_param
+    return self._network.manager.setConfigParam(self.home_id, self.object_id, param, value, size)
+  File "libopenzwave.pyx", line 3484, in libopenzwave.PyManager.setConfigParam (src-lib/libopenzwave/libopenzwave.cpp:23271)
+TypeError: an integer is required
+2019-10-10 01:40:15,988 ERROR: Exception on /dimmers/get_dimmers_list [GET] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 849, in get_dimmers
+    return backend.get_dimmers()
+  File "/home/pi/IoT-Z-Wave/backend.py", line 387, in get_dimmers
+    print(node.device_type)
+AttributeError: 'ZWaveNode' object has no attribute 'device_type'
+2019-10-10 02:58:38,498 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 02:59:03,363 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 02:59:16,121 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:00:56,439 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:01:17,372 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:01:19,725 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:01:25,390 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:03:07,949 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:03:41,763 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:04:13,049 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:04:40,164 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:05:01,494 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:05:09,565 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:05:20,038 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:05:35,081 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:06:05,301 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:06:24,004 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'
+2019-10-10 03:06:36,180 ERROR: Exception on /dimmers/set_level [POST] [in /usr/local/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "flask-main.py", line 931, in set_dimmer_level
+    if all(item in content.keys() for item in ['node_id','value']):
+  File "flask-main.py", line 931, in <genexpr>
+    if all(item in content.keys() for item in ['node_id','value']):
+AttributeError: 'NoneType' object has no attribute 'keys'

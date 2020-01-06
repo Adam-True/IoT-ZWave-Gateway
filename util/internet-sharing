@@ -1,0 +1,18 @@
+#!/bin/bash
+################################################################################
+# internet-sharing
+#
+# Forward outbound traffic from a client interface to an internet gateway
+# interface.
+#
+# <https://wiki.archlinux.org/index.php/Internet_sharing>
+# <https://linoxide.com/firewall/ip-forwarding-connecting-private-interface-internet/>
+################################################################################
+gwint=${1:-'net0'}  # internet gateway interface -- all outbound traffic
+clint=${2:-'net1'}  # client interface -- input traffic
+
+sysctl net.ipv4.ip_forward=1 net.ipv6.conf.default.forwarding=1 net.ipv6.conf.all.forwarding=1
+
+iptables -t nat -A POSTROUTING -o $gwint -j MASQUERADE
+iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i $clint -o $gwint -j ACCEPT
