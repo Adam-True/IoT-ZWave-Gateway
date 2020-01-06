@@ -37,6 +37,9 @@ class MqttZwaveDispatcher:
         # Line added to subscribe to a topic, we're gonna run two devices that communicate to each other
         self.client.subscribe("devices/" + self.true_device_id + "/messages/devicebound/#", 0)
 
+        # Add zwave listener
+        self.backend.addListener(self.listen_to_zwave)
+
     def on_connect(self, client, userdata, flags, rc):
         print("Device connected with result code: " + str(rc))
 
@@ -77,6 +80,13 @@ class MqttZwaveDispatcher:
     def on_subscribe(self, mosq, obj, mid, granted_qos):
         print("Subscribed: " + str(mid) + " " + str(granted_qos))
 
+    def listen_to_zwave(self, network, node, value):
+
+        # executed when a new value from a node is received
+        payload = 'Node %s: value update: %s is %s.' % (node.node_id, value.label, value.data)
+
+        print(payload)
+        self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
 
     def start_mqtt_dispatcher(self):
         try:

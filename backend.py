@@ -132,6 +132,9 @@ class Backend():
     # ################# START AND STOP THE SOFTWARE REPRESENTATION #################################################
     ################################################################################################################
 
+    def addListener(self, listener):
+        dispatcher.connect(listener, ZWaveNetwork.SIGNAL_VALUE)
+
     def start(self):
 
         # this method starts the software representation
