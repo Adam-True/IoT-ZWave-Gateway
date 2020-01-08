@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# Groupe dev 6
+# Corentin Barman / Adam True / Jonathan Michel
 
 import sys
 import time
@@ -350,21 +350,17 @@ class Backend_with_sensors(Backend):
                 mot = 0
                 for value in values.itervalues():
                     if value.label == "Battery Level":
-                        bat = int(value.data)
+                        bat = value.data
                     elif value.label == "Relative Humidity":
-                        hum = int(value.data)
+                        hum = value.data
                     elif value.label == "Luminance":
-                        lum = int(value.data)
+                        lum = value.data
                     elif value.label == "Temperature":
-                        temp = int(value.data)
+                        temp = value.data
                     elif value.label == "Sensor":
-                        mot = bool(value.data)
+                        mot = str(value.data).lower()
 
-                return '{ "controller": "%s", "sensor": "%s", "location": "%s", "battery": %s, }'
-                jsonify(controller=name, sensor=node.node_id, location=node.location,
-                                battery=bat.label.lower(), humidity=hum.label.lower(),
-                                luminance=lum.label.lower(), temperature=temp.label.lower(),
-                                motion=mot.label.lower(), updateTime=self.timestamps["timestamp" + str(node.node_id)])
+                return '{ "controller":"%s", "sensor":%d, "battery":%s, "humidity":%s, "luminance":%s, "temperature":%s, "motion":%s }' % (name, node.node_id, bat, hum, lum, temp, mot)
         return "Node not ready or wrong sensor node !"
 
     def set_basic_sensor_nodes_configuration(self, Grp_interval, Grp_reports, Wakeup_interval):

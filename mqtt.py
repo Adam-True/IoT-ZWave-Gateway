@@ -101,13 +101,14 @@ class MqttZwaveDispatcher:
 
     def get_sensor(self):
         try:
-            my_json = json.load(self.backend.get_all_Measures(4))
-            print (my_json)
+            back_measures = self.backend.get_all_Measures(4)
+            print (back_measures)
+            my_json = json.loads(back_measures)
 
-            payload = '{ "topic":"sensor", "humidity":%s, "temperature":%s, "luminance":%s }' % (my_json['humidity'], my_json['temperature'], my_json['luminance'])
+            payload = '{ "topic":"sensor", "id":%s, "humidity":%f, "temperature":%f, "luminance":%f, "motion":%s }' % (my_json['controller'], my_json['humidity'], my_json['temperature'], my_json['luminance'], str(my_json['motion']).lower())
 
             self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
-            self.t.start()
+#            self.t.start()
         except ValueError:
             print("Oh no boy! :(")
 
