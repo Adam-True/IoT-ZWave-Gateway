@@ -7,20 +7,17 @@ import json
 class MqttZwaveDispatcher:
 
     def __init__(self):
-        self.room_temp = 0
-        self.room_humidity = 0
-        self.sensor_battery = 0
-        self.room_luminance = 0
-        self.room_uv = 0
-
-        self.repeat_time = 30.0
-
         self.path_to_root_cert = "digicert.cer"
-
         self.true_device_id = "ZWave-Gateway"
         self.true_sas_token = "SharedAccessSignature sr=IoT-Hub-MSE.azure-devices.net%2Fdevices%2FZWave-Gateway&sig=mu%2Fhgeaol%2Bs6mLFdl8G06CBocUeeRqx06g77hzvQBFU%3D&se=1580847387"
 
         self.iot_hub_name = "IoT-Hub-MSE"
+
+        self.room_motion = False
+
+        # In seconds
+        self.repeat_time = 30.0 # Sensor measurement period
+        self.motion_time = 30.0 # Time before motion sensor is deactivated
 
         # Setup backend
         self.backend = Backend_with_dimmers_and_sensors()
@@ -98,19 +95,29 @@ class MqttZwaveDispatcher:
                 payload = '{ "topic":"light", "value":'+str(value.data)+', "status":"success" }'
                 print(payload)
                 self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
+        elif int(node.node_id) == 4:
+            if value.label == "Alarm Level":
+                print("room motion is now true")
+                self.room_motion = True
+                Timer(self.motion_time, self.reset_motion_sensor).start()
 
-    def get_sensor(self):
+
+    def publish_sensor(self):
         try:
             back_measures = self.backend.get_all_Measures(4)
-            print (back_measures)
             my_json = json.loads(back_measures)
-
-            payload = '{ "topic":"sensor", "id":"' + my_json['controller'] + '", "humidity":' + str(my_json['humidity']) + ', "temperature":' + str(my_json['temperature']) + ', "luminance":' + str(my_json['luminance']) + ', "motion":'+ str(my_json['motion']).lower() +'}'
+            payload = '{ "topic":"sensor", "id":"' + my_json['controller'] + '", "humidity":' + str(my_json['humidity']) + ', "temperature":' + str(my_json['temperature']) + ', "luminance":' + str(my_json['luminance']) + ', "motion":'+ str(self.room_motion).lower() +'}'
+            print (payload)
 
             self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
-            Timer(self.repeat_time, self.get_sensor).start()
+            Timer(self.repeat_time, self.publish_sensor).start()
         except ValueError:
             print("Oh no boy! :(")
+
+    def reset_motion_sensor(self):
+        self.room_motion = False
+        print("room motion is now false")
+
 
     def start_mqtt_dispatcher(self):
         try:
@@ -118,7 +125,7 @@ class MqttZwaveDispatcher:
             #    print(self.backend.get_nodes_list())
             print(self.backend.set_dimmer_level(6, 0))
             # Add timer for polling data
-            Timer(self.repeat_time, self.get_sensor).start()
+            Timer(self.repeat_time, self.publish_sensor).start()
             self.client.loop_forever()
         except KeyboardInterrupt:
             self.backend.stop()
