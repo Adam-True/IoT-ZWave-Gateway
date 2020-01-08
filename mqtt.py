@@ -15,6 +15,8 @@ class MqttZwaveDispatcher:
 
         self.room_motion = False
 
+        self.dimmer_command_value = 0
+
         # In seconds
         self.repeat_time = 30.0 # Sensor measurement period
         self.motion_time = 30.0 # Time before motion sensor is deactivated
@@ -59,8 +61,6 @@ class MqttZwaveDispatcher:
 
     def on_message(self, mosq, obj, msg):
         print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
-
-        dimmer_value = 0
         json_data = json.loads(msg.payload)
 
         print('topic : '+json_data['topic'])
@@ -68,15 +68,15 @@ class MqttZwaveDispatcher:
 
         # If the given topic is light - for this device
         if json_data['topic'] == 'light':
-            dimmer_value = json_data['value']
+            self.dimmer_command_value = json_data['value']
 
             # Limit dimmer between 0 and 100
-            if dimmer_value > 99:
-                dimmer_value = 99
-            elif dimmer_value < 0:
-                dimmer_value = 0
+            if self.dimmer_command_value > 99:
+                self.dimmer_command_value = 99
+            elif self.dimmer_command_value < 0:
+                self.dimmer_command_value = 0
 
-            print(self.backend.set_dimmer_level(6, dimmer_value))
+            print(self.backend.set_dimmer_level(6, self.dimmer_command_value))
 
 
     def on_subscribe(self, mosq, obj, mid, granted_qos):
@@ -92,9 +92,10 @@ class MqttZwaveDispatcher:
         # Check if the zwave essage is from the sensor
         if int(node.node_id) == 6:
             if value.label == "Level":
-                payload = '{ "topic":"light", "value":'+str(value.data)+', "status":"success" }'
+                payload = '{ "topic":"light", "value":'+str(self.dimmer_command_value)+', "status":"success" }'
                 print(payload)
                 self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
+
         elif int(node.node_id) == 4:
             if value.label == "Alarm Level":
                 print("room motion is now true")

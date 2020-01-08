@@ -394,10 +394,10 @@ class Backend_with_dimmers(Backend):
                 values = node.get_values()
                 for value in values.itervalues():
                     if value.label == "Level":
-                        val = int(value.data)
-                        return jsonify(controller=name, dimmer=node.node_id, location=node.location,
-                                       type=value.label.lower(),
-                                       updateTime=self.timestamps["timestamp" + str(node.node_id)], value=val)
+                        return int(value.data)
+#                        return jsonify(controller=name, dimmer=node.node_id, location=node.location,
+#                                       type=value.label.lower(),
+#                                       updateTime=self.timestamps["timestamp" + str(node.node_id)], value=val)
         return "Node not ready or wrong dimmer node !"
 
     def set_dimmer_level(self, n, level):
