@@ -13,6 +13,8 @@ class MqttZwaveDispatcher:
         self.room_luminance = 0
         self.room_uv = 0
 
+        self.repeat_time = 30.0
+
         self.path_to_root_cert = "digicert.cer"
 
         self.true_device_id = "ZWave-Gateway"
@@ -46,8 +48,6 @@ class MqttZwaveDispatcher:
         # Add zwave listener
         self.backend.addListener(self.listen_to_zwave)
 
-        # Add timer for polling data
-        self.t = Timer(30.0, self.get_sensor)
 
     def on_connect(self, client, userdata, flags, rc):
         print("Device connected with result code: " + str(rc))
@@ -93,9 +93,9 @@ class MqttZwaveDispatcher:
         payload = ""
 
         # Check if the zwave essage is from the sensor
-        if int(node.node_id) == 4:
-            if value.label == "Alarm Level":
-                payload = '{ "topic":"alarm" }'
+        if int(node.node_id) == 6:
+            if value.label == "Level":
+                payload = '{ "topic":"light", "value":'+str(value.data)+', "status":"success" }'
                 print(payload)
                 self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
 
@@ -105,10 +105,10 @@ class MqttZwaveDispatcher:
             print (back_measures)
             my_json = json.loads(back_measures)
 
-            payload = '{ "topic":"sensor", "id":%s, "humidity":%f, "temperature":%f, "luminance":%f, "motion":%s }' % (my_json['controller'], my_json['humidity'], my_json['temperature'], my_json['luminance'], str(my_json['motion']).lower())
+            payload = '{ "topic":"sensor", "id":"' + my_json['controller'] + '", "humidity":' + str(my_json['humidity']) + ', "temperature":' + str(my_json['temperature']) + ', "luminance":' + str(my_json['luminance']) + ', "motion":'+ str(my_json['motion']).lower() +'}'
 
             self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
-#            self.t.start()
+            Timer(self.repeat_time, self.get_sensor).start()
         except ValueError:
             print("Oh no boy! :(")
 
@@ -117,7 +117,8 @@ class MqttZwaveDispatcher:
             self.backend.start()
             #    print(self.backend.get_nodes_list())
             print(self.backend.set_dimmer_level(6, 0))
-            self.t.start() # after 30 seconds, "hello, world" will be printed
+            # Add timer for polling data
+            Timer(self.repeat_time, self.get_sensor).start()
             self.client.loop_forever()
         except KeyboardInterrupt:
             self.backend.stop()
