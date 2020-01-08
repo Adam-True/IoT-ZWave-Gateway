@@ -1,11 +1,17 @@
 from paho.mqtt import client as mqtt
 import ssl
 from backend import *
-
+from threading import Timer
+import json
 
 class MqttZwaveDispatcher:
 
     def __init__(self):
+        self.room_temp = 0
+        self.room_humidity = 0
+        self.sensor_battery = 0
+        self.room_luminance = 0
+        self.room_uv = 0
 
         self.path_to_root_cert = "digicert.cer"
 
@@ -40,6 +46,9 @@ class MqttZwaveDispatcher:
         # Add zwave listener
         self.backend.addListener(self.listen_to_zwave)
 
+        # Add timer for polling data
+        self.t = Timer(30.0, self.get_sensor)
+
     def on_connect(self, client, userdata, flags, rc):
         print("Device connected with result code: " + str(rc))
 
@@ -55,26 +64,22 @@ class MqttZwaveDispatcher:
         print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
 
         dimmer_value = 0
+        json_data = json.loads(msg.payload)
 
-        parameters = msg.topic.split("&")[1:]
+        print('topic : '+json_data['topic'])
+        print('value : '+str(json_data['value']))
 
-        for p in parameters:
-            details = p.split("=")
-            name = details[0]
-            value = details[1]
+        # If the given topic is light - for this device
+        if json_data['topic'] == 'light':
+            dimmer_value = json_data['value']
 
-            print("name : "+name+", value : "+value)
+            # Limit dimmer between 0 and 100
+            if dimmer_value > 99:
+                dimmer_value = 99
+            elif dimmer_value < 0:
+                dimmer_value = 0
 
-            if name == "topic":
-                if value == "light":
-                    dimmer_value = int(msg.payload)
-                    print("dimmer set to "+str(dimmer_value))
-                    if dimmer_value < 0:
-                        dimmer_value = 0
-                    elif dimmer_value > 100:
-                        dimmer_value = 100
-
-                    print(self.backend.set_dimmer_level(6, dimmer_value))
+            print(self.backend.set_dimmer_level(6, dimmer_value))
 
 
     def on_subscribe(self, mosq, obj, mid, granted_qos):
@@ -83,16 +88,35 @@ class MqttZwaveDispatcher:
     def listen_to_zwave(self, network, node, value):
 
         # executed when a new value from a node is received
-        payload = 'Node %s: value update: %s is %s.' % (node.node_id, value.label, value.data)
+        # payload = 'Node %s: value update: %s is %s.' % (node.node_id, value.label, value.data)
 
-        print(payload)
-        self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
+        payload = ""
+
+        # Check if the zwave essage is from the sensor
+        if int(node.node_id) == 4:
+            if value.label == "Alarm Level":
+                payload = '{ "topic":"alarm" }'
+                print(payload)
+                self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
+
+    def get_sensor(self):
+        try:
+            my_json = json.load(self.backend.get_all_Measures(4))
+            print (my_json)
+
+            payload = '{ "topic":"sensor", "humidity":%s, "temperature":%s, "luminance":%s }' % (my_json['humidity'], my_json['temperature'], my_json['luminance'])
+
+            self.client.publish("devices/" + self.true_device_id + "/messages/events/", payload, qos=1)
+            self.t.start()
+        except ValueError:
+            print("Oh no boy! :(")
 
     def start_mqtt_dispatcher(self):
         try:
             self.backend.start()
             #    print(self.backend.get_nodes_list())
             print(self.backend.set_dimmer_level(6, 0))
+            self.t.start() # after 30 seconds, "hello, world" will be printed
             self.client.loop_forever()
         except KeyboardInterrupt:
             self.backend.stop()

@@ -360,10 +360,11 @@ class Backend_with_sensors(Backend):
                     elif value.label == "Sensor":
                         mot = bool(value.data)
 
-                return jsonify(controller=name, sensor=node.node_id, location=node.location,
-                                battery=bat, humidity=hum,
-                                luminance=lum, temperature=temp,
-                                motion=mot, updateTime=self.timestamps["timestamp" + str(node.node_id)])
+                return '{ "controller": "%s", "sensor": "%s", "location": "%s", "battery": %s, }'
+                jsonify(controller=name, sensor=node.node_id, location=node.location,
+                                battery=bat.label.lower(), humidity=hum.label.lower(),
+                                luminance=lum.label.lower(), temperature=temp.label.lower(),
+                                motion=mot.label.lower(), updateTime=self.timestamps["timestamp" + str(node.node_id)])
         return "Node not ready or wrong sensor node !"
 
     def set_basic_sensor_nodes_configuration(self, Grp_interval, Grp_reports, Wakeup_interval):
